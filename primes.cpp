@@ -55,12 +55,11 @@ int main(void)
         m.lock();
         count++;
         sum += i;
+        m.unlock();
 
         if ((int)dqs[idx].size() == num_largest_primes_wanted)
           dqs[idx].pop_front();
         dqs[idx].push_back(i);
-
-        m.unlock();
       }
   };
 
